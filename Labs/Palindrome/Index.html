@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome Validator </title>
+</head>
+<body>
+<!--
+    1. Make a text box button. The text box will be where you type the string you want to test. The button will activate the function to test the string
+    2. Write a javascript function that will take the text from the textbox and figure put whether or not it is a palindrome.
+    3. Based on the result of the function, the page will display either a green message that the word is a palindrome, or a red message that it is not.
+
+    Suggested words to test:
+    mom
+    the
+    Racecar
+    Journal
+
+-->
+<input id="textBox" type="text"><br />
+<button  onclick="checkText()" >Check</button><br />
+
+
+<p id="message"></p>
+
+
+<script>
+    function checkText(){
+        let word = document.getElementById("textBox").value;
+        let lower = word.toLowerCase();
+        let reverse = lower.split("").reverse().join("");
+        let msg = document.getElementById("message");
+        if (lower === reverse){
+            msg.textContent = word + " Is a palindrome"
+            msg.style.color= "green";
+        } else {
+            msg.textContent = word + " Is not a palindrome"
+            msg.style.color = "red";
+        }
+    }
+
+</script>
+</body>
+</html>

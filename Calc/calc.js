@@ -10,3 +10,30 @@ buttons.forEach(
         button.addEventListener("click", calculate);
     }
 );
+
+// Preform the calculations on our calculator
+function calculate(event){
+    // What was clicked?
+    const clickedValue = event.target.value;
+
+    // Handle what was clicked
+    // If it is an =
+    if(clickedValue === "="){
+        // Is the display empty?
+        if(display.value !== ""){
+            // Calculate the value and display
+            display.value = eval(display.value);
+        }
+    }
+    // Did I click clear?
+    else if (clickedValue === "C"){
+        // Empty the display
+        display.value = "";
+    }
+    // Otherwise add it
+    else{
+        // Add whatever I clicked to the display
+        display.value += clickedValue;
+    }
+
+}
